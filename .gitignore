@@ -32,3 +32,4 @@ bin/
 !**/src/main/**/*.class
 !**/src/test/**/*.class
 target/
+.cursor/
