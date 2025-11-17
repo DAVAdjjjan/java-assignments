@@ -1,0 +1,6 @@
+лист. 11, 2025 11:54:44 ПП org.example.files.Files readFileName
+INFO: Запит імені файлу від користувача...
+лист. 11, 2025 11:55:10 ПП org.example.files.Files getRowWithMaxWords
+INFO: Пошук рядка з найбільшою кількістю слів у файлі file.txt
+лист. 11, 2025 11:55:10 ПП org.example.files.Files getRowWithMaxWords
+INFO: Рядок з найбільшою кількістю слів: "djlwakd pawf;awl [pkfoawko jpowafpw" (5 слів)

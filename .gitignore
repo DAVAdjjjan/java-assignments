@@ -33,3 +33,5 @@ bin/
 !**/src/test/**/*.class
 target/
 .cursor/
+lab8/files/
+lab8/files2/
