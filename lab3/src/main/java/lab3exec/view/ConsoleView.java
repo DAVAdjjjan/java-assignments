@@ -1,7 +1,7 @@
-package lab3.src.main.java.lab3exec.view;
+package lab3exec.view;
 
-import lab3.src.main.java.lab3exec.controller.ShapeController;
-import lab3.src.main.java.lab3exec.model.Shape;
+import lab3exec.controller.ShapeController;
+import lab3exec.model.Shape;
 
 public class ConsoleView {
   private ShapeController controller;

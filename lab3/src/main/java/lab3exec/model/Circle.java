@@ -1,4 +1,4 @@
-package lab3.src.main.java.lab3exec.model;
+package lab3exec.model;
 
 public class Circle extends Shape {
   private double radius;

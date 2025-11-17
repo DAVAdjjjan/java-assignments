@@ -1,11 +1,11 @@
-package lab3.src.main.java.lab3exec;
+package lab3exec;
 
-import lab3.src.main.java.lab3exec.controller.ShapeController;
-import lab3.src.main.java.lab3exec.model.Circle;
-import lab3.src.main.java.lab3exec.model.Rectangle;
-import lab3.src.main.java.lab3exec.model.Shape;
-import lab3.src.main.java.lab3exec.model.Triangle;
-import lab3.src.main.java.lab3exec.view.ConsoleView;
+import lab3exec.controller.ShapeController;
+import lab3exec.model.Circle;
+import lab3exec.model.Rectangle;
+import lab3exec.model.Shape;
+import lab3exec.model.Triangle;
+import lab3exec.view.ConsoleView;
 
 public class Main {
     public static void main(String[] args) {

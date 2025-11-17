@@ -1,9 +1,9 @@
-package lab3.src.main.java.lab3exec.controller;
+package lab3exec.controller;
 
 import java.util.Arrays;
 import java.util.Comparator;
 
-import lab3.src.main.java.lab3exec.model.Shape;
+import lab3exec.model.Shape;
 
 public class ShapeController {
   public void displayAll(Shape[] shapes) {
