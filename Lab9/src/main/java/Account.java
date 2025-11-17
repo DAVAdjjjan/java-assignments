@@ -15,7 +15,7 @@ public class Account {
         lock.lock();
         if (balance < amount) {
             lock.unlock();
-            throw new IllegalArgumentException("Cannot withdraw negative amount");
+            throw new IllegalArgumentException("Insufficient funds");
         }
         balance -= amount;
         lock.unlock();
