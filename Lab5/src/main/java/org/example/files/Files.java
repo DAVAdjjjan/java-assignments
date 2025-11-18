@@ -1,12 +1,28 @@
 package org.example.files;
 
-import java.io.*;
-import java.net.*;
-import java.util.*;
-import java.util.logging.*;
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
-import org.example.enums.SortOrder;
 import org.example.enums.SortBy;
+import org.example.enums.SortOrder;
 import org.example.files.comparators.TagsAlphabetComparator;
 import org.example.files.comparators.TagsFrequencyComparator;
 import org.jsoup.Jsoup;
@@ -18,7 +34,7 @@ public class Files {
 
     private static final Logger logger = Logger.getLogger(Files.class.getName());
 
-    private final String defaultPath = System.getProperty("user.dir") + "/src/main/java/org/example/files/txtFiles/";
+    private final String defaultPath;
 
     static {
         try {
@@ -41,6 +57,14 @@ public class Files {
 
         } catch (IOException e) {
             System.err.println("Logger init failed: " + e.getMessage());
+        }
+    }
+
+    public Files() {
+        try {
+            defaultPath = Files.class.getResource("txtFiles").toURI().getPath() + "/";
+        } catch (URISyntaxException e) {
+            throw new RuntimeException("Failed to initialize defaultPath", e);
         }
     }
 
@@ -155,11 +179,13 @@ public class Files {
     }
 
     private List<Map.Entry<String, Integer>> sortTags(HashMap<String, Integer> tagsMap,
-                                                      Comparator<Map.Entry<String, Integer>> comparator,
-                                                      SortOrder order) {
+            Comparator<Map.Entry<String, Integer>> comparator,
+            SortOrder order) {
         List<Map.Entry<String, Integer>> entries = new ArrayList<>(tagsMap.entrySet());
-        if (order == SortOrder.ASC) entries.sort(comparator);
-        else entries.sort(comparator.reversed());
+        if (order == SortOrder.ASC)
+            entries.sort(comparator);
+        else
+            entries.sort(comparator.reversed());
         return entries;
     }
 
@@ -185,7 +211,7 @@ public class Files {
             URLConnection connection = url.openConnection();
 
             try (InputStream is = new BufferedInputStream(connection.getInputStream());
-                 BufferedReader in = new BufferedReader(new InputStreamReader(is))) {
+                    BufferedReader in = new BufferedReader(new InputStreamReader(is))) {
 
                 StringBuilder sb = new StringBuilder();
                 String line;

@@ -1,12 +1,12 @@
 package org.example;
 
-import org.example.enums.SortBy;
-import org.example.enums.SortOrder;
-import org.example.files.Files;
-
 import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.Scanner;
+
+import org.example.enums.SortBy;
+import org.example.enums.SortOrder;
+import org.example.files.Files;
 
 public class Main {
     public static void main(String[] args) {
@@ -27,8 +27,7 @@ public class Main {
 
         ResourceBundle rb = ResourceBundle.getBundle(
                 "location.messages",
-                locale
-        );
+                locale);
         System.out.println("======================================\n");
 
         boolean running = true;
@@ -69,6 +68,7 @@ public class Main {
 
             System.out.println();
         }
+        scanner.close();
 
         System.out.println("Program exited. / Програма завершена.");
     }
