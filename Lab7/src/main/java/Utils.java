@@ -38,7 +38,8 @@ public final class Utils {
         .filter(word -> !word.isEmpty())
         .filter(word -> {
           if (!word.codePoints().allMatch(Character::isLetter)) {
-            throw new IllegalArgumentException("Wrong format in word " + word);
+            System.out.println("Wrong format in word " + word);
+            return false;
           }
           return true;
         })
