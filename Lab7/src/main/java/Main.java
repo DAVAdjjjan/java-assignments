@@ -1,16 +1,15 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        IFindMinUniqCharsWord strFinder = new StrFinderLambdaAndStreamApi();
+        Scanner sc = new Scanner(System.in);
 
-        String result1 = strFinder.findMinUniqueCharsWord("apple banana kiwi orange");
-        String result2 = strFinder.findMinUniqueCharsWord("aaa bb c dddd");
-        String result3 = strFinder.findMinUniqueCharsWord("hello world java code");
+        System.out.println("Enter sentence of words separated by spaces: ");
+        String sentence = sc.nextLine();
 
-        System.out.println(result1);
-        System.out.println(result2);
-        System.out.println(result3);
+        sc.close();
 
+        System.out.println(Arrays.toString(Utils.filterDesireWords(sentence)));
     }
 }
-
-
